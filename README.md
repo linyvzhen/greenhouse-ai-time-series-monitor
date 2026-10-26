@@ -38,9 +38,9 @@
 
 ## 项目结构
 - `src/`：源代码目录
-  - `data_cleaning.py`：数据清洗脚本
-  - `time_series_model.py`：时序预测模型
-  - `visualization.py`：可视化图表生成
+  - `data_clean.py`：数据清洗脚本
+  - `time_series_prey.py`：时序预测模型
+  - `visual_chat.py`：可视化图表生成
   - `init_database.sql`：数据库建表脚本
 - `data/`：样例数据目录
   - `sample_data.csv`：抽样测试数据
