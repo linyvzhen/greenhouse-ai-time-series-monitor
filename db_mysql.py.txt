@@ -1,9 +1,0 @@
--- 温室环境监测数据表
-CREATE TABLE greenhouse_env (
-    id INT PRIMARY KEY IDENTITY(1,1),
-    record_time DATETIME NOT NULL,
-    temperature DECIMAL(5,2),
-    humidity DECIMAL(5,2),
-    light INT,
-    co2 INT
-);
