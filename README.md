@@ -37,5 +37,36 @@
 - 结合实时环境数据给出针对性建议
 
 ## 项目结构
+- `src/`：源代码目录
+  - `data_cleaning.py`：数据清洗脚本
+  - `time_series_model.py`：时序预测模型
+  - `visualization.py`：可视化图表生成
+  - `init_database.sql`：数据库建表脚本
+- `data/`：样例数据目录
+  - `sample_data.csv`：抽样测试数据
+- `screenshot/`：效果截图存放目录
+- `doc/`：项目文档目录
+  - `需求说明文档.md`：需求说明文档
+
+## 运行说明
+### 环境要求
+- Python 3.9+
+- SQL Server
+- 依赖包：pandas, numpy, matplotlib
+
+### 快速开始
+1. 执行 `src/init_database.sql` 初始化数据表
+2. 安装依赖：`pip install pandas numpy matplotlib`
+3. 运行数据清洗：`python src/data_cleaning.py`
+4. 运行预测模型：`python src/time_series_model.py`
+
+## 项目收获
+- 掌握从数据采集、清洗、建模到可视化的完整数据分析链路
+- 熟悉SQL Server数据库设计与复杂SQL编写
+- 理解时序预测模型在智慧农业场景的落地应用
+- 积累业务需求梳理、文档撰写、AI能力集成的经验
+
+## 作者
+计算机科学与技术专业 · 课程设计项目
 
 
