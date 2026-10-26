@@ -1,0 +1,14 @@
+import pandas as pd
+from sklearn.ensemble import RandomForestRegressor
+
+def train_predict_model(df):
+    X = df[["humidity","light","co2"]]
+    y = df["temp"]
+    model = RandomForestRegressor()
+    model.fit(X,y)
+    return model
+
+if __name__ == "__main__":
+    df = pd.read_csv("../data/sample_data.csv")
+    model = train_predict_model(df)
+    print("时序预测模型训练完成")

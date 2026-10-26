@@ -1,0 +1,37 @@
+import pymysql
+import pandas as pd
+
+def create_table():
+    conn = pymysql.connect(host="localhost", user="root", password="你的密码", database="greenhouse")
+    cur = conn.cursor()
+    sql = """
+    CREATE TABLE IF NOT EXISTS env_data(
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        record_time DATETIME,
+        temp FLOAT,
+        hum FLOAT,
+        light FLOAT,
+        co2 FLOAT
+    )
+    """
+    cur.execute(sql)
+    conn.commit()
+    cur.close()
+    conn.close()
+
+# 异常值过滤 + 聚合查询（对应README：筛选、关联聚合、异常过滤）
+def query_filter_data():
+    conn = pymysql.connect(host="localhost", user="root", password="你的密码", database="greenhouse")
+    sql = """
+        SELECT record_time,temp,hum,light,co2
+        FROM env_data
+        WHERE temp BETWEEN 10 AND 40 AND hum BETWEEN 30 AND 95
+        ORDER BY record_time;
+    """
+    df = pd.read_sql(sql, conn)
+    conn.close()
+    return df
+
+if __name__ == "__main__":
+    create_table()
+    print("数据表初始化完成")
