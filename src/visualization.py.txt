@@ -1,0 +1,12 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+def draw_trend(df):
+    plt.plot(df["time"], df["temp"])
+    plt.title("温室温度时序趋势")
+    plt.savefig("../screenshot/trend.png")
+    plt.close()
+
+if __name__ == "__main__":
+    df = pd.read_csv("../data/sample_data.csv")
+    draw_trend(df)
